@@ -1,8 +1,4 @@
-// Napisz program w C, który dzia³a jak wc, tylko na pliku. (liczenie s³ów, bajtów, linii)
-
-// JE¯ELI KOMPILUJE PAN W VISUAL STUDIO TO TRZEBA WEJŒÆ WE W£AŒCIWOŒCI --> C/C++ --> PREPROCESOR --> DEFINICJE PREPROCESORA
-// I DODAÆ TAM NA KOÑCU PODAN¥ NI¯EJ FRAZÊ, BO NIESTETY JEST JAKIŒ PROBLEM Z VS :(((
-// ;_CRT_SECURE_NO_WARNINGS
+// Programme which counts digits, words, bytes and lines in a file.
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,14 +9,14 @@ int main(int argc, char* argv[]) {
 	FILE* fp = NULL;
 
 	if (argc < 2) {
-		printf("Za malo argumentow\n");
+		printf("Not enough arguments\n");
 		return 1;
 	}
 
 	char* sciezka = argv[1];
 
 	if ((fp = fopen(sciezka, "r")) == NULL) {
-		printf("Nie mozesz tego zrobic!");
+		printf("You cannot do this!");
 		return 1;
 		}
 
@@ -30,7 +26,7 @@ int main(int argc, char* argv[]) {
 	int znaki = 1;
 	char ch, c;
 
-	printf("Licze...\n\n");
+	printf("Wait...\n\n");
 
 	ch = fgetc(fp);
 
@@ -57,13 +53,13 @@ int main(int argc, char* argv[]) {
 	fseek(fp, 0L, SEEK_END);
 	bajty = ftell(fp);
 	
-	printf("Liczba bajtow w pliku: %d\n", bajty);
+	printf("Number of bytes in the file: %d\n", bajty);
 
-	printf("Liczba linijek w pliku: %d\n", linijki);
+	printf("Number of lines in the file: %d\n", linijki);
 
-	printf("Liczba slow w pliku: %d\n", slowa);
+	printf("Number of words in the file: %d\n", slowa);
 
-	printf("Liczba znakow w pliku: %d\n", znaki);
+	printf("Number of digits in the file: %d\n", znaki);
 
 	if (fp == NULL) {
 		return 1;
