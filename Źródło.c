@@ -1,4 +1,4 @@
-// Wstawiam jeszcze raz, bo Ÿle zrozumia³am polecenie. Mam nadziejê, ¿e to ju¿ ostatni
+/* Values of the third array are alternating values of the first array and second array */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -14,11 +14,11 @@ int main(void) {
 	int* tab2;
 	tab2 = (int*)malloc(sizeof(int) * a);
 
-	printf("Podaj rozmiar tablicy 1 i 2, który jest mniejszy od 10:\n");
+	printf("Please, provide size of first and second array <10:\n");
 	scanf_s("%i", &a);
 
 	if (a >= 10) {
-		printf("Rozmiar mial byc mniejszy od 10, nie oszukasz mnie xD");
+		printf("Provided size is >10");
 		return 0;
 	}
 
@@ -28,7 +28,7 @@ int main(void) {
 		tab1[i] = rand() % 10;
 	}
 
-	printf("Wartosci tablicy 1:\n");
+	printf("First array values:\n");
 
 	for (i = 0; i < a; i++) {
 		printf("tab1[%i] = %i\n", i, tab1[i]);
@@ -38,7 +38,7 @@ int main(void) {
 		tab2[i] = rand() % 10;
 	}
 
-	printf("Wartosci tablicy 2:\n");
+	printf("Second array values:\n");
 
 	for (i = 0; i < a; i++) {
 		printf("tab2[%i] = %i\n", i, tab2[i]);
@@ -58,7 +58,7 @@ int main(void) {
 		d++;
 	}
 
-	printf("Wartosci tablicy 3:\n");
+	printf("Third array values:\n");
 
 	for (i = 0; i <= c; i++) {
 		printf("tab3[%i] = %li\n", i, tab3[i]);
