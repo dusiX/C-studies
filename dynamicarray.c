@@ -1,6 +1,6 @@
-// Napisz program, który dynamicznie alokuje tablicê(wielkoœæ podawana jako argument programu) i wype³nia j¹ losowo generowanymi liczbami.
-// W programie napisz funkcjê, która oblicza iloczyn nieparzystych liczb naturalnych z wygenerowanej tablicy(tablica jako argument funkcji).
-// Wygenerowan¹ tablicê oraz wynik funkcji wypisz na standardowe wyjœcie oraz do pliku(œcie¿ka do pliku jest podawana jako drugi argument programu)
+// Dynamic array allocation (width provided as a programme argument) filled with randomly generated numbers.
+// There is a function, which counts product of odd natural numbers from generated array.
+// The generated array and the result of the funtion is printed to the standard output and to the file (path to the file is provided as a second argument).
 
 
 #include <stdio.h>
@@ -15,7 +15,7 @@ int main(int argc, char* argv[]) {
 	FILE* fp=NULL;
 
 	if (argc < 3) {
-		printf("Za malo argumentow\n");
+		printf("Not enough arguments\n");
 		return 0;
 	}
 
@@ -35,7 +35,7 @@ int main(int argc, char* argv[]) {
 
 	}
 
-	printf("Argumenty tablicy:\n");
+	printf("Array arguments:\n");
 
 	for (i = 0; i < a; i++) {
 		printf("%i", tab[i]);
@@ -50,21 +50,21 @@ int main(int argc, char* argv[]) {
 
 	}
 
-	printf("Iloczyn liczb nieparzystych z tablicy to: %i\n", c);
+	printf("Product of odd natural numbers from array is: %i\n", c);
 
 	if ((fp = fopen(sciezka, "w")) == NULL) {
-			printf("Nie mozesz tego zrobic!\n");
+			printf("You cannot do this!\n");
 			return(1);
 	}
 
-	fprintf(fp, "Argumenty tablicy:\n");
+	fprintf(fp, "Array arguments:\n");
 
 	for (i = 0; i < a; i++) {
 		fprintf(fp, "%i", tab[i]);
 		fprintf(fp, "\n");
 	}
 
-	fprintf(fp, "Iloczyn liczb nieparzystych z tablicy to %d \n", c);
+	fprintf(fp, "Product of odd natural numbers from array is %d \n", c);
 	fclose(fp);
 
 	free(tab);
