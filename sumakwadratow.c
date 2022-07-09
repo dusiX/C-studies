@@ -1,10 +1,8 @@
+/* program ma policzyc sume kwadratÃ³w liczb od 1 do n. */
+
 #include <stdio.h>
 #include <stdlib.h>
-/**********************************************
-* program ma policzyæ sumê kwadratów liczb od
-* 1 do n.
-* W programie s¹ celowe b³êdy
-***********************************************/
+
 int suma_kwadratow_do(int);
 int main(void) {
 
@@ -19,7 +17,7 @@ int main(void) {
 	}
 
 	a_suma_formula = suma_kwadratow_do(100);
-	printf("suma wprost: %d = suma z formu³y: %d\n",
+	printf("suma wprost: %d = suma z formuÂ³y: %d\n",
 		a_suma_wprost, a_suma_formula);
 	return 0;
 }
